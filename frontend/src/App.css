@@ -1,0 +1,62 @@
+.container {
+  min-height: 100vh;
+  min-width: 100%;
+  overflow: hidden;
+}
+
+body {
+  overflow: hidden;
+}
+
+.layoutCon {
+  display: flex;
+  padding: 0 5%;
+  overflow: hidden;
+}
+
+.commonLayout {
+  padding-left: 3rem;
+  flex: 1;
+}
+
+.commonLayoutLeft {
+  display: flex;
+}
+
+.commonLayoutDivider {
+  margin-left: auto;
+}
+
+.commonLayoutLeft-main {
+  padding-top: 3rem;
+  flex: 1;
+  padding-right: 3rem;
+  padding-bottom: 3rem;
+  height: calc(100vh - 7.1rem);
+  overflow: auto;
+}
+
+/* endpoint input */
+
+.endpointInput {
+  flex: 1;
+  max-width: 50rem;
+}
+
+.endpointInput input {
+  font-size: 1.5rem;
+}
+
+.Mui-disabled.endpointInput input.Mui-disabled {
+  color: var(--text-clr);
+  -webkit-text-fill-color: var(--text-clr);
+}
+
+.Mui-disabled.endpointInput input.Mui-disabled::selection {
+  color: white;
+  -webkit-text-fill-color: white;
+}
+
+.MuiTooltip-tooltip {
+  font-size: 1rem !important;
+}

@@ -1,0 +1,55 @@
+.pagination {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.Button {
+  background-color: white;
+  border-radius: 0.5rem;
+  border: 1px solid #ced4da;
+  width: 3.5rem;
+  font-weight: 100;
+  height: 3.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  color: var(--text-clr);
+  user-select: none;
+}
+
+.dots {
+  font-size: 1.5rem;
+  color: var(--text-clr);
+  user-select: none;
+  width: 2.5rem;
+  font-weight: 100;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Button:not(:disabled):hover {
+  border-color: var(--cp);
+}
+
+.Button:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.Button span {
+  font-size: 1.8rem;
+  color: var(--text-clr);
+  font-weight: 100;
+}
+
+.pagination .active {
+  background-color: var(--cp);
+  color: white;
+}

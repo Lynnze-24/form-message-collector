@@ -1,0 +1,26 @@
+.image {
+  width: 22rem;
+  aspect-ratio: 16/9;
+  border-radius: 0.5rem;
+}
+
+.card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.text {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.card:hover .image {
+  filter: sepia(1);
+}
+
+.card:hover .text {
+  filter: sepia(1);
+}

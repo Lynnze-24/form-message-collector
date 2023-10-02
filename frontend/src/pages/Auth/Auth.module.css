@@ -1,0 +1,22 @@
+.auth {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 0;
+}
+
+.auth img {
+  width: 20rem;
+}
+
+.auth p {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+@media only screen and (max-height: 700px) {
+  .auth {
+    justify-content: flex-start;
+  }
+}

@@ -1,0 +1,17 @@
+.projectListCon {
+  min-width: 22rem;
+  padding-top: 3rem;
+  padding-left: 3rem;
+}
+
+.projHead {
+  font-weight: 400;
+  color: var(--text-clr);
+  margin-bottom: 3rem;
+}
+
+.listCon {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}

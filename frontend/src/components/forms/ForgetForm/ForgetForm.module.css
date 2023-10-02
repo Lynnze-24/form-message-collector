@@ -1,0 +1,6 @@
+.forgetForm {
+  display: flex;
+  flex-direction: column;
+  min-width: 30rem;
+  gap: 1rem;
+}

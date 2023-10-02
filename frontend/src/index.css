@@ -1,0 +1,109 @@
+/* reset css and utilities */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+*:focus {
+  outline: none;
+}
+
+:root {
+  font-size: 62.5%;
+  --cp: #58a52b;
+  --text-clr: #323232;
+  --divider: #e9ecef;
+  --primary-color: var(--cp);
+  --lcp: #b1a139dc;
+  --cs: #f7f7f7;
+  --ct: #4c9ca1;
+  --cq: #0c0b0b;
+  --l1cq: #0c0b0bdf;
+  --l2cq: #0c0b0bb7;
+  --lcq: #1f1c1c77;
+  --dg: #e34332;
+  --ldg: #ffe7e6;
+  --dialog: #495057;
+  --border: #0000003b;
+  --success: #1ea97c;
+  --warning: #e39f17;
+  --info: #2456bb;
+  --purple: #a855f7;
+  --lsuccess: #e4f8f0;
+  --disabled: rgb(212, 212, 205);
+}
+
+html {
+  scroll-behavior: smooth;
+  color: var(--text-clr);
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+*::selection {
+  background-color: purple;
+  color: white;
+}
+
+input::placeholder {
+  user-select: none;
+}
+
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+  appearance: textField;
+}
+
+/* fallback */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/materialicons/v140/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2)
+    format('woff2');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}

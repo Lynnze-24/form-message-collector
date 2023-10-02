@@ -1,0 +1,9 @@
+.codeBlockCon {
+  position: relative;
+}
+
+.iconButton {
+  position: absolute;
+  top: 5rem;
+  left: calc(100% - 5rem);
+}

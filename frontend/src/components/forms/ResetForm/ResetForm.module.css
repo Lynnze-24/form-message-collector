@@ -1,0 +1,6 @@
+.resetForm {
+  display: flex;
+  flex-direction: column;
+  min-width: 25rem;
+  gap: 1rem;
+}

@@ -1,0 +1,16 @@
+.endPointCon {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  margin-bottom: 3rem;
+}
+
+.endPointTxt,
+.samplecodeText {
+  font-size: 1.8rem;
+  font-weight: normal;
+}
+
+.endPointTxt {
+  margin-bottom: 2rem;
+}
