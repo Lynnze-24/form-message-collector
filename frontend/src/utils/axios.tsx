@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const Axios = axios.create({
-  baseURL: 'http://localhost:4000/api',
+  baseURL: 'https://fmc-cehz.onrender.com/api', //'http://localhost:4000/api'
   timeout: 10000,
 });
 
