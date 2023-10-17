@@ -1,0 +1,80 @@
+/* Basic styles */
+.btn {
+  --btnClr1: var(--cp);
+  --btnClr2: white;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.8rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.btnChildren {
+  display: flex;
+  align-items: center;
+}
+
+.btn span {
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+  position: relative;
+}
+
+/* ************************************************************** */
+
+/* button modes */
+
+/* outlined */
+.outlined {
+  border: 1px solid var(--btnClr1);
+  background-color: var(--btnClr2);
+  color: var(--btnClr1);
+  transition: all 0.2s ease-in-out;
+}
+
+.outlined:hover {
+  box-shadow: 0 0 0.2rem 0.1rem var(--btnClr1);
+}
+
+/* contained */
+.contained {
+  color: var(--btnClr2);
+  background-color: var(--btnClr1);
+  transition: all 0.3s ease-in-out;
+}
+
+.contained:hover {
+  background-color: var(--btnClr2);
+  color: var(--btnClr1);
+  box-shadow: 0 0 0.5rem 0rem var(--btnClr1);
+}
+
+/* ************************************************************** */
+
+/* color statuses */
+
+.primary {
+  --btnClr1: var(--cp);
+}
+
+.purple {
+  --btnClr1: rgb(60, 1, 154);
+}
+
+.info {
+  --btnClr1: var(--info);
+}
+
+.error {
+  --btnClr1: var(--dg);
+}
+
+.warning {
+  --btnClr1: var(--warning);
+}
+
+.success {
+  --btnClr1: var(--success);
+}

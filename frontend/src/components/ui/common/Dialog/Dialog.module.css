@@ -33,4 +33,11 @@
   border-top-right-radius: 0.5rem;
   color: white;
   cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.dialogBtn span:hover {
+  color: var(--dg);
+  background-color: white;
+  box-shadow: 0 0 0.5rem 0rem var(--dg);
 }

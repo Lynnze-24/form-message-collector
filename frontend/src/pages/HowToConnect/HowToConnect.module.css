@@ -9,8 +9,24 @@
 .samplecodeText {
   font-size: 1.8rem;
   font-weight: normal;
+  margin-bottom: 2rem;
 }
 
-.endPointTxt {
-  margin-bottom: 2rem;
+.iconButton {
+  z-index: 100;
+  color: var(--cp);
+  cursor: pointer;
+  border-radius: 50%;
+  height: 2.5rem;
+  width: 2.5rem;
+  display: grid;
+  place-items: center;
+}
+
+.iconButton:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.iconButton span {
+  font-size: 1.6rem;
 }

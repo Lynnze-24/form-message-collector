@@ -1,9 +1,32 @@
 .codeBlockCon {
   position: relative;
+  width: calc(100% - 0.5rem);
+  display: flex;
+  flex-direction: column-reverse;
+  overflow: hidden;
+  margin-left: 0.4rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.5rem 0.1rem rgba(0, 0, 0, 0.08);
 }
 
 .iconButton {
   position: absolute;
-  top: 5rem;
+  top: 2rem;
   left: calc(100% - 5rem);
+  z-index: 100;
+  color: var(--cp);
+  cursor: pointer;
+  border-radius: 50%;
+  height: 3.5rem;
+  width: 3.5rem;
+  display: grid;
+  place-items: center;
+}
+
+.iconButton:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.iconButton span {
+  font-size: 1.8rem;
 }

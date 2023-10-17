@@ -40,7 +40,7 @@ const Toast: FC<ToastProps> = ({
   onClose,
   autoCloseMilli,
 }) => {
-  let timeOut = useRef<number | undefined>();
+  let timeOut = useRef<NodeJS.Timeout | undefined>();
   useEffect(() => {
     if (timeOut.current) {
       clearTimeout(timeOut.current);

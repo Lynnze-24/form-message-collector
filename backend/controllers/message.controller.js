@@ -33,7 +33,7 @@ const createMessage = asyncHandler(async (req, res) => {
   }
 
   const message = await Message.create({
-    user: req.user.id,
+    user: req.params.id,
     email,
     subject,
     messageBody,

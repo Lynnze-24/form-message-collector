@@ -10,36 +10,47 @@ import {
 import styles from './HowToConnect.module.css';
 import CodeBlock from '../../components/ui/common/CodeBlock/CodeBlock';
 import Zoom from '@mui/material/Zoom';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store/store';
+import Dialog from '../../components/ui/common/Dialog/Dialog';
+import TestMessageForm from '../../components/forms/TestMessageForm/TestMessageForm';
 
 interface HowToConnectProps {
   children?: React.ReactNode;
 }
 
-const codeString: string = `
-  export function getDateTime(timeStr: string): string {
-    const date = new Date(timeStr);
-    let currentDateStr = date.toLocaleDateString('en-US', {
-      month: 'short',
-      day: '2-digit',
-      year: 'numeric',
-    });
-  
-    const Today = new Date().toLocaleDateString('en-US', {
-      month: 'short',
-      day: '2-digit',
-      year: 'numeric',
-    });
-  
-    currentDateStr = currentDateStr === Today ? 'Today' : currentDateStr;
-    const currentTimeStr = date.toLocaleTimeString('en-US', {
-      minute: '2-digit',
-      hour: '2-digit',
-    });
-  
-    return (currentDateStr + ' at ' +currentTimeStr)
+const HowToConnect: FC<HowToConnectProps> = ({}) => {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const userId: string | undefined = useSelector(
+    (state: RootState) => state?.user?.data?.id
+  );
+
+  const codeString: string = `
+  async function postMessage(email,subject,messageBody){
+   try{
+      const response = await fetch("http://localhost:4000/messages/${userId}",{
+        method:'POST',
+        body:JSON.stringify({
+          email,
+          subject,
+          messageBody
+        }),
+        headers:{
+          "Content-Type":"application/json"
+        }
+      })
+      console.log(response)
+      if(response.ok){
+        console.log("Message posted successfully!")
+      }else{
+        //handle error here
+      }
+    }catch(e){
+      //handle error here
+      console.log(e)
+    }
   };`;
 
-const HowToConnect: FC<HowToConnectProps> = ({}) => {
   const endPointRef = useRef<HTMLInputElement | null>(null);
   const [open, setOpen] = useState<boolean | undefined>(false);
 
@@ -93,23 +104,33 @@ const HowToConnect: FC<HowToConnectProps> = ({}) => {
                   disableTouchListener
                   title="Copied"
                 >
-                  <Button onClick={handleCopyEndPoint}>copy</Button>
+                  <div
+                    onClick={handleCopyEndPoint}
+                    className={styles.iconButton}
+                  >
+                    <span className="material-icons">content_copy</span>
+                  </div>
                 </Tooltip>
               </ClickAwayListener>
             </InputAdornment>
           }
           disabled
           fullWidth={true}
-          defaultValue="https://aunghtetlinn.ddd/adksldsdj"
+          defaultValue={`http://localhost:4000/messages/${userId}`}
         />
 
-        <Button variant="contained">send test email</Button>
+        <Button onClick={() => setIsDialogOpen(true)} variant="contained">
+          send test email
+        </Button>
       </div>
 
       <h3 className={styles.samplecodeText}>
         Sample Javascript Code for you to connect to the endpoint
       </h3>
       <CodeBlock codeString={codeString} />
+      <Dialog onClose={() => setIsDialogOpen(false)} isOpen={isDialogOpen}>
+        <TestMessageForm closeDialog={() => setIsDialogOpen(false)} />
+      </Dialog>
     </CommonLayout>
   );
 };

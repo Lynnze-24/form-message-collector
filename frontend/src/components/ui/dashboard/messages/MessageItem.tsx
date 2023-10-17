@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import { AxiosInstance, AxiosResponse } from 'axios';
 import usePrivateMutation from '../../../../hooks/usePrivateMutation/usePrivateMutation.tsx';
 import { useQueryClient } from '@tanstack/react-query';
+import BaseButton from '../../common/BaseButton/BaseButton.tsx';
 
 interface MessageItemProps extends Message {
   children?: React.ReactNode;
@@ -80,27 +81,25 @@ const MessageItem: FC<MessageItemProps> = ({
         {messageBody}
       </q>
       <div className={styles.btnCon}>
-        <button
+        <BaseButton
+          iconName="check"
           onClick={() => window.open(`mailto:${email}`)}
-          className={`${styles.btn}`}
+          status="purple"
         >
-          reply <span className="material-icons">check</span>
-        </button>
+          Reply
+        </BaseButton>
         {!isDialogMsg && (
-          <button
-            onClick={dialogOpen}
-            className={`${styles.btn} ${styles.btnInfo}`}
-          >
-            details<span className="material-icons">visibility</span>
-          </button>
+          <BaseButton iconName="visibility" onClick={dialogOpen} status="info">
+            Details
+          </BaseButton>
         )}
-
-        <button
+        <BaseButton
+          iconName="delete"
           onClick={() => mutateAsync(_id)}
-          className={`${styles.btn} ${styles.btnDg}`}
+          status="error"
         >
-          delete <span className="material-icons">delete</span>
-        </button>
+          Delete
+        </BaseButton>
       </div>
     </motion.div>
   );

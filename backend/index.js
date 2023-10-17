@@ -1,5 +1,5 @@
 const express = require('express');
-// const path = require('path');
+const path = require('path');
 const cors = require('cors');
 const helmet = require('helmet');
 const mongoose = require('mongoose');
@@ -28,6 +28,11 @@ app.use(helmet());
 
 app.use('/api/users', userRouter);
 app.use('/api/messages', messageRouter);
+
+app.use(express.static(path.join(__dirname, '../frontend/dist')));
+app.get('*', (req, res) =>
+  res.sendFile(path.resolve(__dirname, '../', 'frontend', 'dist', 'index.html'))
+);
 
 app.use(errorHandler);
 

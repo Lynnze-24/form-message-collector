@@ -1,9 +1,6 @@
 import { forwardRef, useState } from 'react';
 import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
 import js from 'react-syntax-highlighter/dist/esm/languages/hljs/javascript';
-
-import ContentCopyIcon from '@mui/icons-material/ContentCopy';
-import IconButton from '@mui/material/IconButton';
 import styles from './CodeBlock.module.css';
 import Zoom from '@mui/material/Zoom';
 import { ClickAwayListener, Tooltip } from '@mui/material';
@@ -53,20 +50,16 @@ const CodeBlock = forwardRef<HTMLInputElement, CodeBlockProps>(
             disableTouchListener
             title="Copied"
           >
-            <IconButton
-              onClick={copyCode}
-              color="primary"
-              className={styles.iconButton}
-            >
-              <ContentCopyIcon color="primary" />
-            </IconButton>
+            <div onClick={copyCode} className={styles.iconButton}>
+              <span className="material-icons">content_copy</span>
+            </div>
           </Tooltip>
         </ClickAwayListener>
         <SyntaxHighlighter
           customStyle={{
-            fontSize: '1.8rem',
-            padding: '3rem',
-            borderRadius: '1rem',
+            fontSize: '1.35rem',
+            padding: '1.5rem',
+            borderRadius: '0.5rem',
           }}
           language="javascript"
           style={docco}
